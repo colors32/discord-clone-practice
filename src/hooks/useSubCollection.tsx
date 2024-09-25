@@ -21,7 +21,7 @@ const useSubCollection = (collectionName: string, subCollectionName: string) => 
   useEffect(() => {
     let collectionRef = collection(db, collectionName, String(channelId), subCollectionName);
 
-    const collectionRefOrderBy = query(collectionRef, orderBy("timestamp", "desc"));
+    const collectionRefOrderBy = query(collectionRef, orderBy("timestamp", "asc"));
 
     onSnapshot(collectionRefOrderBy, (snapshot) => {
       let results: Messages[] = [];
